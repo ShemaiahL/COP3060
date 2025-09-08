@@ -3,21 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shemaiah Lester - HTML Skeleton</title>
+    <title>Shemaiah Lester - HTML Forms + Tables</title>
 </head>
 <body>
     
 <h1>
-    Shemaiah Lester - Assignment 1
+    Shemaiah Lester - HTML Forms + Tables
 </h1>
 
-<p>
-    Hello, I am Shemaiah Lester a fourth year computer science scholar. I am
-    from Jacksonville, Florida and am eager to learn from this course and
-    gain some new skills. I enjoy watching tv and have recently started 
-    reading books. I am excited to learn and grateful for this opportunity.
-    Thank you so much!
-</p>
+<form action = "results.html" method = "GET">
 
+    <label for = "fname" >First Name</label> <br>
+    <input type = "text" name = "fname" id = "fname"> <br>
+    <br>
+
+
+    <label for = "lname" >Last Name</label> <br>
+    <input type = "text" name = "lname" id = "lname"> <br>
+    <br>
+
+
+    <label for = "email" >Email</label> <br>
+    <input type = "email" name = "email" id = "email"> <br>
+    <br>
+
+    <label for = "password">Password</label> <br>
+    <input type = "password" name = "password" id = "password"> <br>
+
+
+    <p> Do you like our site?</p>
+    
+    <label for ="Yes">Yes</label>
+    <input type = "radio" name = "response" id = "Yes" value = "Yes"> <br>
+
+    <label for = "No">No</label>
+    <input type = "radio" name = "response" id = "No" value = "No"> <br>
+
+    <label for = "Subscribe">Subscribe to newsletter</label> 
+    <input type ="checkbox" name ="Subscribe" id = "Subscribe"> <br>
+
+
+    
+    <!-- <button>Submit</button> -->
+</form>
 </body>
 </html>
+
