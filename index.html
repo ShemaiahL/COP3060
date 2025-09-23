@@ -1,158 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shemaiah Lester - HTML Forms + Tables</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Basics</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-<h1>
-    Shemaiah Lester - HTML Forms + Tables
-</h1>
+  <h1>Welcome to My Page</h1>
+  <h2>About This Project</h2>
 
-<form action = "results.html" method = "GET">
-
-    <label for = "fname" >First Name</label> <br>
-    <input type = "text" name = "fname" id = "fname"> <br>
-    <br>
-
-
-    <label for = "lname" >Last Name</label> <br>
-    <input type = "text" name = "lname" id = "lname"> <br>
-    <br>
-
-
-    <label for = "email" >Email</label> <br>
-    <input type = "email" name = "email" id = "email"> <br>
-    <br>
-
-    <label for = "password">Password</label> <br>
-    <input type = "password" name = "password" id = "password"> <br>
-
-
-    <p> Do you like our site?</p>
-    
-    <label for ="Yes">Yes</label>
-    <input type = "radio" name = "response" id = "Yes" value = "Yes"> <br>
-
-    <label for = "No">No</label>
-    <input type = "radio" name = "response" id = "No" value = "No"> <br>
-
-    <label for = "Subscribe">Subscribe to newsletter</label> 
-    <input type ="checkbox" name ="Subscribe" id = "Subscribe"> <br>
-
-    <p> WHich browser do you use?</p> <br>
-
-    <label for ="browser">Browser Options</label>
-    <select name = "browser" id = "browser">
-        <option value = "Google Chrome">Google Chrome</option>
-        <option value = "Microsoft Edge">Microsoft Edge</option>
-        <option value = "Firefox">Firefox</option>
-    </select> <br>
-
-    <button>Submit</button> 
-
-    <style>
-        .table_1{
-            border-collapse:collapse;
-            margin: 25px 0;
-            font-size: 0.9em;
-            min-width:400px;
-
-        }
-
-        .table_1 thead tr {
-
-            background-color: rgb(5, 107, 35);
-            color:rgb(255, 255, 255);
-            text-align: left;
-            font-weight: bold;
-        }
-
-        .table_1 th, td{
-            padding: 12px 15px;
-
-
-        }    
-
-        .table_1 tbody tr{
-            border-bottom: 1px solid rgb(32, 207, 255);
-
-        }
-
-        .table_1 tbody tr:nth-of-type(even){
-            background-color: rgb(255, 187, 69);
-
-        }
-        .table_1 tbody tr:last-of-type{
-            border-bottom: 2px solid rgb(5, 107, 35);
-        }
-
-
-        .table_1 tbody tr.active-row{
-            font-weight: bold;
-            color: rgb(0, 116, 0);
-        }
-        
-
-
-    </style>
-
-    <table class = "table_1">
-        <thead>
-            <th>Movie Name</th>
-            <th>Release Date</th>
-            <th>Movie Genre</th>
-        </thead>
-
-        <tbody> 
-
-        <tr>
-            <td>The Roses</td>
-            <td>August 29, 2025</td>
-            <td>Action</td>
-        </tr>
-
-        <tr class="active-row">
-            <td>SuperMan</td>
-            <td>July, 11/2025</td>
-            <td>Action</td>
-        </tr>
-
-        <tr>
-            <td>Light of the World</td>
-            <td>Septemeber 5,2025</td>
-            <td>Animation</td>
-        </tr>
-
-        <tr>
-            <td>Weapons</td>
-            <td>August 8, 2025</td>
-            <td>Horror</td>
-        </tr>
-
-        
-        <tr>
-            <td>Caught Stealing</td>
-            <td>August 29, 2025</td>
-            <td>Drama</td>
-        </tr>
-
-        </tbody>
-
-
-
-
-
-
-    </table>
-    
-
-
-    
-    
-</form>
+  <p>This is a regular paragraph styled with the type selector.</p>
+  <p class="highlight">This paragraph is styled using a class selector.</p>
+  
+  <div id="special">I am unique because I use an ID selector!</div>
 </body>
 </html>
-
