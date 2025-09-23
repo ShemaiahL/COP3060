@@ -18,3 +18,9 @@ h2{
     color:aquamarine;
     font-weight: bold;
 }
+
+#special {
+background-color: gray;
+padding: 10px;
+border: 2px solid black;
+}
