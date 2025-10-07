@@ -113,3 +113,77 @@ function sortView(mode = "az") {
   renderList(state.view);
 }
 
+async function loadData() {
+  setStatus("Loading…", "loading");
+
+  try {
+    const res = await fetch(buildUrl());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    const json = await res.json();
+    const arr = Array.isArray(json) ? json : [];
+    const mapped = pickFields(arr);
+
+    if (mapped.length === 0) {
+      state.raw = [];
+      state.view = [];
+      setStatus("No data returned by the API.", "warn");
+      renderList([]);
+      return;
+    }
+
+    state.raw = mapped;
+    state.view = mapped;
+
+    setStatus(`Loaded ${mapped.length} items.`, "success");
+
+    
+    sortView("az");
+  } catch (err) {
+    handleError(err);
+  }
+}
+
+function handleError(err) {
+  console.error(err);
+  setStatus("Something went wrong loading data. Please try again.", "error");
+}
+
+function wireEvents() {
+  const form = $("#signup-form");
+  const email = $("#email");
+  const loadBtn = $("#load-btn");
+  const sortSel = $("#sort-select");
+
+  on(form, "submit", (e) => {
+    e.preventDefault();
+    const value = email ? email.value : "";
+    const result = validateEmail(value);
+
+    if (result.ok) {
+      setStatus(" Email looks good!", "success");
+    } else {
+      setStatus(`${result.reason}`, "error");
+    }
+  });
+
+  on(email, "input", () => {
+    const value = email.value;
+    const { ok } = validateEmail(value);
+
+    if (value.length === 0) setStatus("");
+    else if (ok) setStatus("Typing… looks valid so far", "info");
+    else setStatus("Typing… not valid yet", "warn");
+  });
+
+  on(loadBtn, "click", loadData);
+
+  on(sortSel, "change", () => sortView(sortSel.value));
+}
+
+function init() {
+  renderTips();     
+  wireEvents();      
+  setStatus("Ready."); 
+}
+init();
