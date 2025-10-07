@@ -27,3 +27,16 @@ const state = {
     const ready = state.myBool && exact;
     if (!ready) console.warn("Unexpected fail")
 })();
+
+function validateEmail(value){
+    const pattern = /^[^\s@]+[^\s@]+\.[^\s@]+$/;
+
+    if(!value || value.trim().length < 5){
+        return {ok: false, reason: "Email have minimum of 5 characters."};
+    }
+
+    if(!pattern.test(value)){
+        return {ok: false, reason: "Please enter a valid email"};
+    }
+    return {ok: true};
+}
