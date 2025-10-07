@@ -9,7 +9,7 @@ function setStatus(message, type = "info") {
     const box = $("#status");
     if(!box) return;
     box.textContext = message;
-}
+};
 
 const state = {
     myString: "Rattlers on top",
@@ -20,3 +20,10 @@ const state = {
     mystery: null,
     notSet: undefined,
 };
+
+(function operatorDemo(){
+    const total = state.myNumber + 5;
+    const exact = (total === 45);
+    const ready = state.myBool && exact;
+    if (!ready) console.warn("Unexpected fail")
+})();
