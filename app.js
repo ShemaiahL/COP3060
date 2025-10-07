@@ -40,3 +40,16 @@ function validateEmail(value){
     }
     return {ok: true};
 }
+
+function renderTips(){
+    const ul = $(#tips-list);
+    if(!ul) return;
+}
+ul.innerHTML = " ";
+
+
+for (let i = 0; i < state.myArray.length; i++){
+    const li = document.createElement("li");
+    li.textContent = ${i+1}. ${state.myArray[i]};
+    ul.appendChild(li);
+}
